@@ -138,7 +138,9 @@ new_window = browser.window_handles[1]
 browser.switch_to.window(new_window)  # переходим на новую вкладку
 
 
-time.sleep(1) # пауза на 2 секунды
+time.sleep(1) # пауза на 1 секунды
+
+browser.implicitly_wait(5) #неявное ожидание
 
 button1 = browser.find_element_by_id("book")
 WebDriverWait(browser, 12).until(expected_conditions.text_to_be_present_in_element((By.ID, "price"),"100")) # явное ожидание в течении 12 сек, вылавливаем нужное нам значение
